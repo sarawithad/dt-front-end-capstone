@@ -21,14 +21,12 @@ $scope.getFinalStory = function() {
 
 $scope.readStoryAloud = function() {
 	console.log("you clicked on the reader button");
-    var storyToRead = new $window.SpeechSynthesisUtterance();
-    $window.speechSynthesis.speak(storyToRead);
+	let finalStory;
+    msg = new $window.SpeechSynthesisUtterance(finalStory);
+    $window.speechSynthesis.speak(msg);
 };
 
 
- 	// var story = "story"
-  //   msg = new SpeechSynthesisUtterance(story)
-  //   window.speechSynthesis.speak(msg)
 
 	// $scope.responsiveVoice = responsiveVoice;
 
