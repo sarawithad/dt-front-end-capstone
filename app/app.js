@@ -1,0 +1,88 @@
+"use strict";
+
+var app = angular.module("StoryApp", ["ngRoute"]);
+
+let isAuth = (AuthFactory) => new Promise ( (resolve, reject) => {
+  // console.log("running isAuth");
+    AuthFactory.isAuthenticated()
+    .then ( (userExists) => {
+    console.log("userExists", userExists);
+        if (userExists){
+      console.log("Authenticated, go ahead.");
+            resolve();
+        }else {
+      console.log("Authentication rejected, go away.");
+            reject();
+        }
+    });
+});
+
+
+app.config(function($routeProvider) {
+  $routeProvider.
+   when("/storytime", {
+      templateUrl: "partials/homepage.html",
+      controller: "HomepageCtrl"
+    }).
+    when("/login", {
+      templateUrl: "partials/login.html",
+      controller: "UserCtrl"
+    }).
+    when("/logout", {
+      templateUrl: "partials/login.html",
+      controller: "UserCtrl"
+    }).
+    when("/storytime/storybuilder/chooseplace", {
+      templateUrl: "partials/choose-place.html",
+      controller: "ChoosePlaceCtrl"
+    }).
+    when("/storytime/storybuilder/choosemaincharacter", {
+      templateUrl: "partials/choose-main-char.html",
+      controller: "ChooseMainCharCtrl"
+    }).
+		when("/storytime/storybuilder/choosesecondcharacter", {
+      templateUrl: "partials/choose-sec-char.html",
+      controller: "ChooseSecCharCtrl"
+    }).
+		when("/storytime/storybuilder/choosetransport", {
+      templateUrl: "partials/choose-transport.html",
+      controller: "ChooseTransportCtrl"
+    }).
+       when("/storytime/storybuilder/chooseitem", {
+      templateUrl: "partials/choose-item.html",
+      controller: "ChooseItemCtrl"
+    }).
+		when("/storytime/storybuilder/choosefood", {
+      templateUrl: "partials/choose-food.html",
+      controller: "ChooseFoodCtrl"
+    }).
+		when("/storytime/storybuilder/choosevillain", {
+      templateUrl: "partials/choose-villain.html",
+      controller: "ChooseVillainCtrl"
+    }).
+		when("/storytime/storybuilder/builtstory", {
+      templateUrl: "partials/built-story.html",
+      controller: "StoryBuilderCtrl"
+    }).
+		when("/storytime/mybookshelf", {
+      templateUrl: "partials/mybookshelf.html",
+      controller: "MyBookshelfCtrl"
+    }).
+    when("storytime/randomstorybuilder/choices", {
+      templateUrl: "partials/random-story.html",
+      controller: "RandomStoryCtrl"
+    }).
+  otherwise('/');
+});
+
+
+app.run(($location, FBCreds) => {
+    let creds = FBCreds;
+    let authConfig = {
+        apiKey: creds.apiKey,
+        authDomain: creds.authDomain
+    };
+    firebase.initializeApp(authConfig);
+});
+
+

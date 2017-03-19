@@ -1,0 +1,78 @@
+{
+  "components" : 
+  [ 
+    { "type" : "main character",
+    "name" : "princess",
+    "image" : "images/princess.png" }, //not sure this is set up right bc doesn't need to be a string?
+    { "type" : "main character",
+    "name" : "ninja",
+    "image" : "images/ninja.png" }, 
+     { "type" : "main character",
+    "name" : "robot",
+    "image" : "images/robot.png" }, 
+     { "type" : "main character",
+    "name" : "ghost",
+    "image" : "images/ghost.png" }, 
+     { "type" : "main character",
+    "name" : "prince",
+    "image" : "images/prince.png" }, 
+     { "type" : "main character",
+    "name" : "ballerina",
+    "image" : "images/ballerina.png" },
+    { "type" : "villain",
+    "name" : "snake",
+    "image" : "images/snake.png" }, 
+    { "type" : "villain",
+    "name" : "pirate",
+    "image" : "images/pirate.png" }, 
+    { "type" : "villain",
+    "name" : "lion",
+    "image" : "images/lion.png" }, 
+    { "type" : "villain",
+    "name" : "Trump",
+    "image" : "images/trump.png" }, 
+    { "type" : "villain",
+    "name" : "Captain Hook",
+    "image" : "images/piratehook.png" }, 
+    { "type" : "villain",
+    "name" : "Evil King",
+    "image" : "images/king.png" }, 
+    ]
+}
+
+
+
+
+
+
+
+
+// {
+//   "items" : 
+// // [ 
+//     {
+//     "assignedTo" : "Brenda",
+//     "dependencies" : "sunshine, clippers, hat, water, headphones",
+//     "dueDate" : "1/5/17",
+//     "isCompleted" : false,
+//     "location" : "Joe's house",
+//     "task" : "mow the lawn",
+//     "urgency" : "low"
+//   }, {
+//     "assignedTo" : "Meg",
+//     "dependencies" : "wifi, tissues, vodka",
+//     "dueDate" : "12/5/17",
+//     "isCompleted" : false,
+//     "location" : "NSS",
+//     "task" : "grade quizzes",
+//     "urgency" : "high"
+//   }, {
+//     "assignedTo" : "Gilbert",
+//     "dependencies" : "hammock, silence",
+//     "dueDate" : "5/21/16",
+//     "isCompleted" : false,
+//     "location" : "Porch of lakefront cabin",
+//     "task" : "take a nap",
+//     "urgency" : "medium"
+//   } ]
+// }

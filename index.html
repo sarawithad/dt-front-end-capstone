@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>storytime</title>
+	<link rel="stylesheet" href="css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Life+Savers|UnifrakturMaguntia" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+
+<body ng-app="StoryApp">
+
+	<div ng-include="'partials/navbar.html'"></div>
+
+
+
+	<div ng-view></div>
+	
+
+
+
+<!-- Jquery script tag -->
+<script type="text/javascript" src="/lib/node_modules/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap script tag -->
+<script type="text/javascript" src="/lib/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- angular scripts -->
+<script type="text/javascript" src="lib/node_modules/angular/angular.min.js"></script>
+<script type="text/javascript" src="lib/node_modules/angular-route/angular-route.min.js"></script>
+<!-- responsive voice script -->
+<script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+<!-- firebase values script -->
+<script type="text/javascript" src="lib/node_modules/firebase/firebase.js"></script>
+<!-- app.js goes before factories and controllers -->
+<script type="text/javascript" src="app/app.js"></script>
+<!-- firebase API -->
+<script type="text/javascript" src="app/values/fb-creds.js"></script>
+<!--////////////////////// factories list ////////////////////////////-->
+<script type="text/javascript" src="app/factories/AuthFactory.js"></script>
+<script type="text/javascript" src="app/factories/StoryFactory.js"></script>
+<!--//////////////////// controllers list //////////////////////// -->
+<script type="text/javascript" src="app/controllers/HomepageCtrl.js"></script>
+<script type="text/javascript" src="app/controllers/NavCtrl.js"></script>
+<script type="text/javascript" src="app/controllers/UserCtrl.js"></script>
+<script type="text/javascript" src="app/controllers/ChoosePlaceCtrl.js"></script>
+<script type="text/javascript" src="app/controllers/ChooseMainCharCtrl.js"></script>
+<script type="text/javascript" src="app/controllers/ChooseSecCharCtrl.js"></script>
+<script type="text/javascript" src="app/controllers/ChooseTransportCtrl.js"></script>
+<script type="text/javascript" src="app/controllers/ChooseItemCtrl.js"></script>
+<script type="text/javascript" src="app/controllers/ChooseFoodCtrl.js"></script>
+<script type="text/javascript" src="app/controllers/ChooseVillainCtrl.js"></script>
+<script type="text/javascript" src="app/controllers/StoryBuilderCtrl.js"></script>
+<script type="text/javascript" src="app/controllers/MyBookshelfCtrl.js"></script>
+
+
+
+</body>
+
+</html>
