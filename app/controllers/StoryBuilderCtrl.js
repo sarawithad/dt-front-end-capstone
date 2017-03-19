@@ -22,7 +22,7 @@ $scope.getFinalStory = function() {
 $scope.readStoryAloud = function() {
 	console.log("you clicked on the reader button");
 	let finalStory;
-    msg = new $window.SpeechSynthesisUtterance(finalStory);
+    var msg = new $window.SpeechSynthesisUtterance();
     $window.speechSynthesis.speak(msg);
 };
 
