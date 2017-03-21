@@ -25,6 +25,12 @@
 	font-weight: bold;
 }
 
+.loginOptions{
+	margin: auto;
+	padding: .5em;
+	font-size: 1em;
+	text-align: center;
+}
 .choiceHeader {
 	text-align: center;
 }
@@ -107,7 +113,7 @@
 
 .bookshelfHeader {
 	text-align: center;
-	font-size: 3em;
+	font-size: 4em;
 }
 
 .bookshelfImg {
@@ -120,7 +126,19 @@
 }
 
 .bookshelf {
-	text-align: left;
+	text-align: center;
 	margin: 2em;
-	font-size:2em;
+	font-size:3em;
+}
+
+.singleBookImg {
+	height: 100px;
+	max-width: 20%;
+	margin: auto;
+	padding: 1em;
+
+}
+
+.titleText {
+	font-size: 2.5em;
 }

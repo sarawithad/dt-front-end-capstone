@@ -2,7 +2,7 @@
 
 app.controller("ChooseItemCtrl", function($scope, StoryFactory, $location){
 
-	$scope.title = "choose an item:";
+	$scope.title = "choose your favorite thing:";
 
 		$scope.addItem = function(item){
 			var newItem = {chosenItem: item};

@@ -21,7 +21,6 @@ app.factory("StoryFactory", ($q, $http, FBCreds) => {
 	return {setStoryObject, getStoryObject};
            
 
-
 });
 
 

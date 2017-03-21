@@ -1,0 +1,20 @@
+<h1 class="storytimeHeader">storytime</h1>
+	
+	<h3 class="choiceHeader">{{storyComponent.title}}</h3>
+
+	<div class="storyPageButtons">
+		<a type="button" class="btn btn-default btn-lg" ng-click=speak(finalStory)><img src="images/reader2.png" class="buttonImg" /><br>read my story!</a>
+	</div>
+
+		<div ng-model="finalStory">
+			<h2 class="onceHeader"><span class="once">O</span>nce upon a time...</h2>
+			<div id="storyText">{{finalStory}}</div>
+			<h2 class="onceHeader">The End</h2>
+		</div>
+
+	<div class="storyPageButtons">
+		<a type="button" class="btn btn-default btn-lg" ng-click=editOneStory()><img src="images/trash.png" class="buttonImg" /><br>change this story</a>
+	<br>
+	<br>
+		<a type="button" class="btn btn-default btn-lg"><img src="images/edit2.png" class="buttonImg" ng-click=deleteOneStory()><br>throw away this story</a>
+	</div>	

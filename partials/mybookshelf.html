@@ -1,11 +1,25 @@
+<div ng-init=setStories()> <!-- need help here -->
 	<h1 class="storytimeHeader">storytime</h1>
 	
 	<div>
 	<img class ="bookshelfImg" src="images/bookshelf.png">
-	<h1 class="bookshelfHeader">{{title}}</h2>
+	<br>
+	<h1 class="bookshelfHeader">my bookshelf</h2>
 	</div>
 
-	<h4 class="bookshelf">my stories</h4>
+
+	<h2 class="bookshelf">my stories</h2>
+		<div ng-repeat="story in stories"> 
+	        <div class="bookshelfList">
+	      		<div class="row">
+	      			<a><img src="images/book.png" ng-href="#!/storytime/mybookshelf/{story.Id}" class="singleBookImg col-md-4"><span class="titleText col-md-8" ng-click="getOneStory(story.Id)">the {{story.chosenMainCharacter}} and the {{story.chosenSecondCharacter}}</span></a>
+	      		</div>
+	        </div>			
+		</div>
+
+
 
 
 	<h4 class="bookshelf">library stories</h4>
+
+</h1>

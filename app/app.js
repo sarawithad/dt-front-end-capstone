@@ -2,33 +2,36 @@
 
 var app = angular.module("StoryApp", ["ngRoute"]);
 
-let isAuth = (AuthFactory) => new Promise ( (resolve, reject) => {
-  // console.log("running isAuth");
-    AuthFactory.isAuthenticated()
-    .then ( (userExists) => {
-    console.log("userExists", userExists);
-        if (userExists){
-      console.log("Authenticated, go ahead.");
-            resolve();
-        }else {
-      console.log("Authentication rejected, go away.");
-            reject();
-        }
-    });
+  let isAuth = (AuthFactory) => new Promise ( (resolve, reject) => {
+    // console.log("running isAuth");
+      AuthFactory.isAuthenticated()
+      .then ( (userExists) => {
+      console.log("userExists", userExists);
+          if (userExists){
+        console.log("Authenticated, go ahead.");
+              resolve();
+          }else {
+        console.log("Authentication rejected, go away.");
+              reject();
+          }
+      });
 });
-
 
 app.config(function($routeProvider) {
   $routeProvider.
+   when("/", {
+      templateUrl: "partials/homepage.html",
+      controller: "HomepageCtrl"
+    }).
    when("/storytime", {
       templateUrl: "partials/homepage.html",
       controller: "HomepageCtrl"
     }).
-    when("/login", {
+    when("/storytime/login", {
       templateUrl: "partials/login.html",
       controller: "UserCtrl"
     }).
-    when("/logout", {
+    when("/storytime/logout", {
       templateUrl: "partials/login.html",
       controller: "UserCtrl"
     }).
@@ -62,12 +65,16 @@ app.config(function($routeProvider) {
     }).
 		when("/storytime/storybuilder/builtstory", {
       templateUrl: "partials/built-story.html",
-      controller: "StoryBuilderCtrl"
+      controller: "StoryCtrl"
     }).
 		when("/storytime/mybookshelf", {
       templateUrl: "partials/mybookshelf.html",
       controller: "MyBookshelfCtrl"
     }).
+    when("/storytime/mybookshelf/{uid}/{storyId}", { //not sure correct
+      templateUrl: "partials/one-story-view.html",
+      controller: "OneStoryCtrl"
+    }).    
     when("storytime/randomstorybuilder/choices", {
       templateUrl: "partials/random-story.html",
       controller: "RandomStoryCtrl"

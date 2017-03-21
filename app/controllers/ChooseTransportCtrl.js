@@ -2,7 +2,7 @@
 
 app.controller("ChooseTransportCtrl", function($scope, StoryFactory, $location){
 
-	$scope.title = "choose your transportation method:";
+	$scope.title = "choose how you want to travel:";
 
 		$scope.addTransport = function(transport){
 			var newTransportation = {chosenTransport: transport};
