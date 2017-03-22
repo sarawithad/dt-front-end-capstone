@@ -86,14 +86,12 @@
 	background-color: white;
 }
 
-.onceHeader {
-	font-size: 2em;
-}
 
 .once{
 	font-size: 3em;
 	background-color: white;
 	font-family: 'UnifrakturMaguntia', cursive;
+	text-align: center;
 }
 
 .storyPageButtons {

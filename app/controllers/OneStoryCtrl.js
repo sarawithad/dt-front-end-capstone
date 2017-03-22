@@ -4,38 +4,25 @@ app.controller("OneStoryCtrl", function($scope, $routeParams, StoryFactory, OneS
 
 	let user = AuthFactory.getUser();
 
-	$scope.finalStory = {};
 	$scope.title = {};
+	$scope.storyBegin = "Once Upon a Time";
+	$scope.storyBody = {};
+	$scope.storyEnd = "The End.";
+	$scope.wholeStory = {};
 
-
-	//reads user-built story aloud on click of "read my story" button
-	$scope.readSelectedStory = function(item){
-	   console.log("you are now using responsive voice");
-	   responsiveVoice.speak($scope.finalStory,  "UK English Female");
-	};
-
-
-	//function to load selected saved story
-	// $scope.getOneStory = function(storyId) {
-	// 	console.log("hello from inside getOneStory");
-	// 	OneStoryFactory.getSingleStory($routeParams.storyId)
-	// 	.then( (story) => {
-	// 		$scope.finalStory = story.finalStory;
-	// 	});
-	// };
-
+	//gets story object user clicks on
 	OneStoryFactory.getSingleStory($routeParams.storyId)
 		.then(function successCallback(response){
 			console.log("getSingleStoryresponse: ", response);
-			$scope.finalStory = response.finalStory;
-			$scope.title = response.title;	
+			$scope.storyBody = response.finalStory;
+			$scope.title = response.title;
+			$scope.wholeStory = $scope.storyBegin + $scope.storyBody + $scope.storyEnd;
 		});
 
-
-	//function to edit selected saved story
-	$scope.editOneStory = function(){
-		console.log("hello from inside editOneStory");
-		OneStoryFactory.editStory();
+	//reads user-built story aloud on click of "read my story" button
+	$scope.readSelectedStory = function(){
+	   console.log("you are now using responsive voice");
+	   responsiveVoice.speak($scope.wholeStory, "UK English Female");
 	};
 
 
@@ -49,3 +36,11 @@ app.controller("OneStoryCtrl", function($scope, $routeParams, StoryFactory, OneS
 	};
 
 });
+
+
+
+	// //function to edit selected saved story
+	// $scope.editOneStory = function(){
+	// 	console.log("hello from inside editOneStory");
+	// 	OneStoryFactory.editStory();
+	// };

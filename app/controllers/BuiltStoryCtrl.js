@@ -1,9 +1,12 @@
 "use strict";
 console.log("controller connected");
 
-app.controller("StoryCtrl", function($scope, $location, StoryFactory, $window, BookshelfFactory, AuthFactory){
+app.controller("StoryCtrl", function($scope, $location, StoryFactory, $window, BookshelfFactory, AuthFactory, OneStoryFactory){
 
 	let user = AuthFactory.getUser();
+
+	// let storyBegin;
+	// let storyEnd;
 
 	var component = StoryFactory.getStoryObject();
 
@@ -13,14 +16,17 @@ app.controller("StoryCtrl", function($scope, $location, StoryFactory, $window, B
 
 	//builds story title using chosen main and second characters
 	$scope.title = `the ${$scope.storyComponents.chosenMainCharacter} and the ${$scope.storyComponents.chosenSecondCharacter}`;
+
+	$scope.storyBegin = `Once Upon a Time,`;
 	
 	//builds story with user's chosen story components
-	$scope.finalStory = `Once upon a time, there was a ${$scope.storyComponents.chosenMainCharacter} who lived at a ${$scope.storyComponents.chosenPlace}. The ${$scope.storyComponents.chosenMainCharacter}’s best friend was a famous ${$scope.storyComponents.chosenSecondCharacter}. The two became best friends after the ${$scope.storyComponents.chosenSecondCharacter} helped the ${$scope.storyComponents.chosenMainCharacter} defeat the evil villain ${$scope.storyComponents.chosenVillain}, and save the ${$scope.storyComponents.chosenPlace}. The ${$scope.storyComponents.chosenMainCharacter} and ${$scope.storyComponents.chosenSecondCharacter} went everywhere together. They always traveled by way of the ${$scope.storyComponents.chosenMainCharacter}'s ${$scope.storyComponents.chosenTransport}. They especially loved to play all around the ${$scope.storyComponents.chosenPlace} with ${$scope.storyComponents.chosenItem}s and have ${$scope.storyComponents.chosenFood} feasts. The ${$scope.storyComponents.chosenMainCharacter} and the ${$scope.storyComponents.chosenSecondCharacter} were friends forever. The end.`;
+	$scope.storyBody = `there was a ${$scope.storyComponents.chosenMainCharacter} who lived at a ${$scope.storyComponents.chosenPlace}. The ${$scope.storyComponents.chosenMainCharacter}’s best friend was a famous ${$scope.storyComponents.chosenSecondCharacter}. The two became best friends after the ${$scope.storyComponents.chosenSecondCharacter} helped the ${$scope.storyComponents.chosenMainCharacter} defeat the evil villain ${$scope.storyComponents.chosenVillain}, and save the ${$scope.storyComponents.chosenPlace}. The ${$scope.storyComponents.chosenMainCharacter} and ${$scope.storyComponents.chosenSecondCharacter} went everywhere together. They always traveled by way of the ${$scope.storyComponents.chosenMainCharacter}'s ${$scope.storyComponents.chosenTransport}. They especially loved to play all around the ${$scope.storyComponents.chosenPlace} with ${$scope.storyComponents.chosenItem}s and have ${$scope.storyComponents.chosenFood} feasts. The ${$scope.storyComponents.chosenMainCharacter} and the ${$scope.storyComponents.chosenSecondCharacter} were friends forever,`;
 
-	// `<h2 class="onceHeader"><span class=once">O<span>nce upon a time<h2>, there was a ${$scope.storyComponents.chosenMainCharacter} who lived at a ${$scope.storyComponents.chosenPlace}. The ${$scope.storyComponents.chosenMainCharacter}’s best friend was a famous ${$scope.storyComponents.chosenSecondCharacter}. The two became best friends after the ${$scope.storyComponents.chosenSecondCharacter} helped the ${$scope.storyComponents.chosenMainCharacter} defeat the evil villain ${$scope.storyComponents.chosenVillain}, and save the ${$scope.storyComponents.chosenPlace}. The ${$scope.storyComponents.chosenMainCharacter} and ${$scope.storyComponents.chosenSecondCharacter} went everywhere together. They always traveled by way of the ${$scope.storyComponents.chosenMainCharacter}'s ${$scope.storyComponents.chosenTransport}. They especially loved to play all around the ${$scope.storyComponents.chosenPlace} with ${$scope.storyComponents.chosenItem}s and have ${$scope.storyComponents.chosenFood} feasts. The ${$scope.storyComponents.chosenMainCharacter} and the ${$scope.storyComponents.chosenSecondCharacter} were friends forever. <h2 class="onceHeader">The End</h2>.`;
+	$scope.storyEnd = `The End`;
 
+	// $scope.wholeStory = title + storyBegin + storyBody + storyEnd;
 
-	console.log("finalStory", $scope.finalStory);
+	console.log("storyBody", $scope.storyBody);
 
 		// place = {{storyComponents.chosenPlace}}
 		// main character = {{storyComponents.chosenMainCharacter}}
@@ -31,23 +37,22 @@ app.controller("StoryCtrl", function($scope, $location, StoryFactory, $window, B
 		// villain = {{storyComponents.chosenVillain}}
 
 
-	//putting on scope makes these available to pass in
-	$scope.storyComponents.finalStory = $scope.finalStory;
+	//putting on scope sets on object and makes these available to pass in
+	$scope.storyComponents.finalStory = $scope.storyBody;
 	$scope.storyComponents.title = $scope.title;
 	$scope.storyComponents.uid = user;
 	$scope.storyComponents.id = $scope.storyId;
-	// $scope.setStories
+	$scope.wholeStory = $scope.storyBegin + $scope.storyBody + $scope.storyEnd;
 
 	//reads user-built story aloud on click of "read my story" button
-	$scope.speak = function(item){
-	   console.log("you are now using responsive voice");
-	   responsiveVoice.speak($scope.finalStory,  "UK English Female");
+	$scope.speak = function(){
+	   responsiveVoice.speak($scope.wholeStory,  "UK English Female");
 	};
 
 
 	//saves user-built story
 	$scope.saveStory = function(storyObject){
-		// $scope.stories = "story";
+		console.log("storyObject: ", storyObject);
 		BookshelfFactory.addNewStory(storyObject)
 		.then(function(response){
 			$location.url("storytime/mybookshelf");

@@ -1,17 +1,17 @@
-
-
 <h1 class="storytimeHeader">storytime</h1>
 	
-	<h3 class="choiceHeader">{{title}}</h3>
+<h2 class="storyHeading">{{title}}</h2>
+<br>
+<br>
+	<div class="story">
+		<h1 class="once">{{storyBegin}}</h1>
+			<div id="storyText">{{storyBody}}</div>
+		<h2 class="once">{{storyEnd}}</h2>
+	</div>
 
-		<div class="story">
-			<h2 class="onceHeader"><span class="once">O</span>nce upon a time...</h2>
-			<div id="storyText">{{finalStory}}</div>
-			<h2 class="onceHeader">The End</h2>
-		</div>
 
 	<div class="storyPageButtons">
-		<a type="button" class="btn btn-default btn-lg" ng-click=readSelectedStory(finalStory)><img src="images/reader2.png" class="buttonImg" /><br>read my story!</a>
+		<a type="button" class="btn btn-default btn-lg" ng-click=readSelectedStory()><img src="images/reader2.png" class="buttonImg" /><br>read my story!</a>
 		<br>
 		<br>
 		<a type="button" class="btn btn-default btn-lg"><img src="images/trash.png" class="buttonImg" ng-click=deleteOneStory(story.id)><br>throw away this story</a>
