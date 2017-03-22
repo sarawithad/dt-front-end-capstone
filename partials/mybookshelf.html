@@ -11,8 +11,8 @@
 	<h2 class="bookshelf">my stories</h2>
 		<div ng-repeat="story in stories"> 
 	        <div class="bookshelfList">
-	      		<div class="row">
-	      			<a><img src="images/book.png" ng-href="#!/storytime/mybookshelf/{story.Id}" class="singleBookImg col-md-4"><span class="titleText col-md-8" ng-click="getOneStory(story.Id)">the {{story.chosenMainCharacter}} and the {{story.chosenSecondCharacter}}</span></a>
+	      		<div>
+	      			<a ng-href="#!/storytime/mybookshelf/{{story.id}}"><img src="images/book.png" class="singleBookImg"><span class="titleText" >the {{story.chosenMainCharacter}} and the {{story.chosenSecondCharacter}}</span></a>
 	      		</div>
 	        </div>			
 		</div>
@@ -22,4 +22,4 @@
 
 	<h4 class="bookshelf">library stories</h4>
 
-</h1>
+</div>

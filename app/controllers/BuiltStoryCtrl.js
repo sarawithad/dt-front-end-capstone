@@ -17,6 +17,8 @@ app.controller("StoryCtrl", function($scope, $location, StoryFactory, $window, B
 	//builds story with user's chosen story components
 	$scope.finalStory = `Once upon a time, there was a ${$scope.storyComponents.chosenMainCharacter} who lived at a ${$scope.storyComponents.chosenPlace}. The ${$scope.storyComponents.chosenMainCharacter}’s best friend was a famous ${$scope.storyComponents.chosenSecondCharacter}. The two became best friends after the ${$scope.storyComponents.chosenSecondCharacter} helped the ${$scope.storyComponents.chosenMainCharacter} defeat the evil villain ${$scope.storyComponents.chosenVillain}, and save the ${$scope.storyComponents.chosenPlace}. The ${$scope.storyComponents.chosenMainCharacter} and ${$scope.storyComponents.chosenSecondCharacter} went everywhere together. They always traveled by way of the ${$scope.storyComponents.chosenMainCharacter}'s ${$scope.storyComponents.chosenTransport}. They especially loved to play all around the ${$scope.storyComponents.chosenPlace} with ${$scope.storyComponents.chosenItem}s and have ${$scope.storyComponents.chosenFood} feasts. The ${$scope.storyComponents.chosenMainCharacter} and the ${$scope.storyComponents.chosenSecondCharacter} were friends forever. The end.`;
 
+	// `<h2 class="onceHeader"><span class=once">O<span>nce upon a time<h2>, there was a ${$scope.storyComponents.chosenMainCharacter} who lived at a ${$scope.storyComponents.chosenPlace}. The ${$scope.storyComponents.chosenMainCharacter}’s best friend was a famous ${$scope.storyComponents.chosenSecondCharacter}. The two became best friends after the ${$scope.storyComponents.chosenSecondCharacter} helped the ${$scope.storyComponents.chosenMainCharacter} defeat the evil villain ${$scope.storyComponents.chosenVillain}, and save the ${$scope.storyComponents.chosenPlace}. The ${$scope.storyComponents.chosenMainCharacter} and ${$scope.storyComponents.chosenSecondCharacter} went everywhere together. They always traveled by way of the ${$scope.storyComponents.chosenMainCharacter}'s ${$scope.storyComponents.chosenTransport}. They especially loved to play all around the ${$scope.storyComponents.chosenPlace} with ${$scope.storyComponents.chosenItem}s and have ${$scope.storyComponents.chosenFood} feasts. The ${$scope.storyComponents.chosenMainCharacter} and the ${$scope.storyComponents.chosenSecondCharacter} were friends forever. <h2 class="onceHeader">The End</h2>.`;
+
 
 	console.log("finalStory", $scope.finalStory);
 
@@ -43,23 +45,13 @@ app.controller("StoryCtrl", function($scope, $location, StoryFactory, $window, B
 	};
 
 
-	//saves user-built story----
-
-	//////////////////////////////////////////////////////////////////////////////////////////////////////
-	//does this need to go on BookshelfCtrl?? Can it be called from here (w/ putOnBookshelf) if on a diff controller?
-	/////////////////////////////////////////////////////////////////////////////////////////////////////
+	//saves user-built story
 	$scope.saveStory = function(storyObject){
 		// $scope.stories = "story";
 		BookshelfFactory.addNewStory(storyObject)
 		.then(function(response){
-			$scope.setStories();
-			// BookshelfFactory.getSavedStories(user)
-			// .then(function(allStories){
-			// 	$scope.stories = allStories;
-			// 	console.log("allStories: ", allStories);
-			// });
+			$location.url("storytime/mybookshelf");
 		});
-		// $location.url("storytime/mybookshelf");
 	};
 
 	//calls saveStory function on click of "save story" button (ng-click)

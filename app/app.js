@@ -71,10 +71,14 @@ app.config(function($routeProvider) {
       templateUrl: "partials/mybookshelf.html",
       controller: "MyBookshelfCtrl"
     }).
-    when("/storytime/mybookshelf/{uid}/{storyId}", { //not sure correct
-      templateUrl: "partials/one-story-view.html",
+    when("/storytime/mybookshelf/:storyId", { //not sure correct
+      templateUrl: "partials/one-story.html",
       controller: "OneStoryCtrl"
-    }).    
+    }). 
+    when("/storytime/mybookshelf/:storyId/edit", { //not sure correct
+      templateUrl: "partials/edit-story.html",
+      controller: "EditStoryCtrl"
+    }).       
     when("storytime/randomstorybuilder/choices", {
       templateUrl: "partials/random-story.html",
       controller: "RandomStoryCtrl"

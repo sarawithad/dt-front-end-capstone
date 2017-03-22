@@ -2,7 +2,7 @@
 
 app.factory("OneStoryFactory", ($q, $http, FBCreds, BookshelfFactory) => { 
 
-    $scope.storyComponents.id = $scope.storyId;
+    // $scope.storyComponents.id = $scope.storyId;
 
     //function for getting single user story on click of story title
     let getSingleStory = (storyId) => {
