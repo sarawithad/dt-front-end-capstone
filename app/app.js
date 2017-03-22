@@ -69,7 +69,8 @@ app.config(function($routeProvider) {
     }).
 		when("/storytime/mybookshelf", {
       templateUrl: "partials/mybookshelf.html",
-      controller: "MyBookshelfCtrl"
+      controller: "MyBookshelfCtrl",
+      // resolve: {isAuth}
     }).
     when("/storytime/mybookshelf/:storyId", { //not sure correct
       templateUrl: "partials/one-story.html",
@@ -79,10 +80,10 @@ app.config(function($routeProvider) {
       templateUrl: "partials/edit-story.html",
       controller: "EditStoryCtrl"
     }).       
-    when("storytime/randomstorybuilder/choices", {
-      templateUrl: "partials/random-story.html",
-      controller: "RandomStoryCtrl"
-    }).
+    // when("storytime/randomstorybuilder/choices", {
+    //   templateUrl: "partials/random-story.html",
+    //   controller: "RandomStoryCtrl"
+    // }).
   otherwise('/');
 });
 
