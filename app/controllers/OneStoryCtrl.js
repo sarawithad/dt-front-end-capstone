@@ -5,7 +5,7 @@ app.controller("OneStoryCtrl", function($scope, $routeParams, StoryFactory, OneS
 	let user = AuthFactory.getUser();
 
 	$scope.title = {};
-	$scope.storyBegin = "Once Upon a Time";
+	$scope.storyBegin = "Once Upon a Time,";
 	$scope.storyBody = {};
 	$scope.storyEnd = "The End.";
 	$scope.wholeStory = {};
