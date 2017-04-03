@@ -6,7 +6,6 @@ app.controller("ChooseVillainCtrl", function($scope, StoryFactory, $location){
 
 		$scope.addVillain = function(villain){
 			var newVillain = {chosenVillain: villain};
-			console.log("newVillain: ", newVillain);
 			StoryFactory.setStoryObject(newVillain);
 
 		$location.url("storytime/storybuilder/builtstory");

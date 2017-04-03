@@ -6,7 +6,6 @@ app.controller("ChooseTransportCtrl", function($scope, StoryFactory, $location){
 
 		$scope.addTransport = function(transport){
 			var newTransportation = {chosenTransport: transport};
-			console.log("newTransportation: ", newTransportation);
 			StoryFactory.setStoryObject(newTransportation);
 
 		$location.url("storytime/storybuilder/chooseitem");

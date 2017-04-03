@@ -2,7 +2,7 @@
 
 app.factory("BookshelfFactory", ($q, $http, FBCreds) => { 
 
-//function for adding a user story to bookshelf
+//function for saving user's built story
 	let addNewStory = (finalStory) => {
         console.log("hello from inside addNewStory function", finalStory);
         return $q((resolve, reject) => {
