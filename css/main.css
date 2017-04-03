@@ -127,7 +127,9 @@
 }
 
 .bookshelfList {
-	text-align: center;
+	text-align: left;
+	padding: 1.5em;
+	margin: 1.5em;
 }
 
 .singleBookImg {
