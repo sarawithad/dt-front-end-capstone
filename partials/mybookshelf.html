@@ -1,4 +1,4 @@
-<div ng-init=setStories()> <!-- need help here -->
+<div ng-init=setStories()>
 	<h1 class="storytimeHeader">storytime</h1>
 	
 	<div>
@@ -8,18 +8,15 @@
 	</div>
 
 
-<!-- 	<h2 class="bookshelf">my stories</h2> -->
-		<div ng-repeat="story in stories"> 
-	        <div class="bookshelfList">
-	      		<div>
-	      			<a ng-href="#!/storytime/mybookshelf/{{story.id}}"><img src="images/book.png" class="singleBookImg"><span class="titleText" >the {{story.chosenMainCharacter}} and the {{story.chosenSecondCharacter}}</span></a>
-	      		</div>
-	        </div>			
-		</div>
+	<div ng-repeat="story in stories"> 
+	    <div class="bookshelfList">
+	      	<div>
+	      		<a ng-href="#!/storytime/mybookshelf/{{story.id}}"><img src="images/book.png" class="singleBookImg"><span class="titleText" >the {{story.chosenMainCharacter}} and the {{story.chosenSecondCharacter}}</span></a>
+	      	</div>
+	    </div>			
+	</div>
 
 
 
-
-<!-- 	<h4 class="bookshelf">library stories</h4> -->
 
 </div>
