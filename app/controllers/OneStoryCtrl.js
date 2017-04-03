@@ -10,10 +10,9 @@ app.controller("OneStoryCtrl", function($scope, $routeParams, StoryFactory, OneS
 	$scope.storyEnd = "The End.";
 	$scope.wholeStory = {};
 
-	//gets story object user clicks on
+	//gets previously built story object user clicks on
 	OneStoryFactory.getSingleStory($routeParams.storyId)
 		.then(function successCallback(response){
-			console.log("getSingleStoryresponse: ", response);
 			$scope.storyBody = response.finalStory;
 			$scope.title = response.title;
 			$scope.wholeStory = $scope.storyBegin + $scope.storyBody + $scope.storyEnd;

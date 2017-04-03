@@ -21,15 +21,6 @@ app.controller("StoryCtrl", function($scope, $location, StoryFactory, $window, B
 
 	console.log("storyBody", $scope.storyBody);
 
-		// place = {{storyComponents.chosenPlace}}
-		// main character = {{storyComponents.chosenMainCharacter}}
-		// second character = {{storyComponents.chosenSecondCharacter}}
-		// transportation = {{storyComponents.chosenTransport}}
-		// item = {{storyComponents.chosenItem}}
-		// food = {{storyComponents.chosenFood}}	
-		// villain = {{storyComponents.chosenVillain}}
-
-
 	//putting on scope sets on object and makes these available to pass in
 	$scope.storyComponents.finalStory = $scope.storyBody;
 	$scope.storyComponents.title = $scope.title;

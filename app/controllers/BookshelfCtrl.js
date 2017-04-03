@@ -11,7 +11,6 @@ app.controller("MyBookshelfCtrl", function($scope, StoryFactory, BookshelfFactor
 		BookshelfFactory.getSavedStories(user)
 			.then(function(allStories){
 				$scope.stories = allStories;
-				console.log("allStories: ", allStories);
 			});
 			$location.url("storytime/mybookshelf");
 	};

@@ -6,7 +6,6 @@ app.controller("ChoosePlaceCtrl", function($scope, StoryFactory, $location){
 
 		$scope.addPlace = function(place){
 			var newPlace = {chosenPlace: place};
-			console.log("newPlace: ", newPlace);
 			StoryFactory.setStoryObject(newPlace);
 
 		$location.url("storytime/storybuilder/choosemaincharacter");

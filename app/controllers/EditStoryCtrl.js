@@ -15,7 +15,6 @@ app.controller("EditStoryCtrl", function($scope, $routeParams, StoryFactory, One
 
 	//function to edit selected saved story
 	$scope.editOneStory = function(){
-		console.log("hello from inside editOneStory");
 		OneStoryFactory.editStory();
 		// $scope.story = story;
 	};
