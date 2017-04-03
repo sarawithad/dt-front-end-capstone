@@ -21,17 +21,17 @@ app.factory("OneStoryFactory", ($q, $http, FBCreds, BookshelfFactory) => {
 
 
     // function for editing single user story on click of edit button
-    // let editStory = (storyId, editedStory) => {
-    //     return $q(function (resolve, reject) {
-    //         $http.patch(`${FBCreds.databaseURL}/stories/${storyId}.json`, angular.toJson(editedStory))
-    //         .then(function(ObjectFromFirebase){
-    //             resolve(ObjectFromFirebase);
-    //         })
-    //         .catch(function(error){
-    //             reject(error);
-    //         });
-    //     });
-    // };
+    let editStory = (storyId, editedStory) => {
+        return $q(function (resolve, reject) {
+            $http.patch(`${FBCreds.databaseURL}/stories/${storyId}.json`, angular.toJson(editedStory))
+            .then(function(ObjectFromFirebase){
+                resolve(ObjectFromFirebase);
+            })
+            .catch(function(error){
+                reject(error);
+            });
+        });
+    };
 
 
     //function for deleting single user story on click of delete button
