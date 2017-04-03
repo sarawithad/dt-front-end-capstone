@@ -11,9 +11,9 @@ app.controller("NavCtrl", function($scope, $window){
 			console.log("currentUser logged in", $scope.isLoggedIn);
 		}else{
 			$scope.isLoggedIn = false;
-			console.log("currentUser logged in", $scope.isLoggedIn);
+			console.log("currentUser not logged in", $scope.isLoggedIn);
 			//$window.location forces the page to completely reload
-			$window.location.href = "#!/storytime/login";
+			$window.location.href = "#!/storytime";
 		}
 
 	});
