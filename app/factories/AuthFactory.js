@@ -1,6 +1,5 @@
 "use strict";
 
-//sole purpose of this is to deal with the data
 
 app.factory("AuthFactory", function(){
 
