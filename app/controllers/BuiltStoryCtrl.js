@@ -35,7 +35,7 @@ app.controller("StoryCtrl", function($scope, $location, StoryFactory, $window, B
 
 
 	//saves user-built story
-	$scope.saveStory = function(storyObject){
+	function saveStory(storyObject){
 		console.log("storyObject: ", storyObject);
 		BookshelfFactory.addNewStory(storyObject)
 		.then(function(response){
@@ -43,29 +43,17 @@ app.controller("StoryCtrl", function($scope, $location, StoryFactory, $window, B
 		});
 	};
 
-	//calls saveStory function on click of "save story" button (ng-click)
-	$scope.putOnBookshelf = function(){
-		$scope.saveStory($scope.storyComponents);
+	//calls saveStory function on click of "save story"--if want to save story but not logged in, re-directs to login page
+	$scope.putOnBookshelf = function(){ 
+		if (user != null) {
+			saveStory($scope.storyComponents);
+		}else{
+			$window.location.href = "#!/storytime/login";
+		};
+
 	};
 
-
 });
-
-
-
-
-//window.speechSynthesis--this works but not with voice I want
-
-// $scope.readStoryAloud = function() {
-// 	console.log("you are now using speechSynthesis");
-//     var msg = new $window.SpeechSynthesisUtterance($scope.finalStory,  "UK English Female");
-//     // var voice = $window.speechSynthesis.getVoices();
-//     // msg.voice = voice[3];
-//     $window.speechSynthesis.getVoices();
-  
-//     $window.speechSynthesis.speak(msg);
-// };
-
 
 
 
