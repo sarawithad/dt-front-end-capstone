@@ -15,10 +15,8 @@ app.controller("UserCtrl", function($scope, $window, AuthFactory, $location){
 		console.log("logout clicked");
 		AuthFactory.logoutUser()
 		.then(function(data){
-			console.log("logged out?", data);
 			$window.location.url = "#!/login"; //use .url so user can't hit back and stay logged in
 		}, function(error){
-			console.log("error occured on logout");
 		});
 	};
 
