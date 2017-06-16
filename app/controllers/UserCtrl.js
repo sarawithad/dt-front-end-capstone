@@ -43,9 +43,9 @@ app.controller("UserCtrl", function($scope, $window, AuthFactory, $location){
     	AuthFactory
 	    .loginUser($scope.account)
 	    .then( () => {
-	        // $scope.isLoggedIn = true;
-	        // console.log("UserCtrl: user is loggedIn", $scope.isLoggedIn );
-	        // $scope.$apply();
+	        $scope.isLoggedIn = true;
+	        console.log("UserCtrl: user is loggedIn", $scope.isLoggedIn );
+	        $scope.$apply();
 	        $window.location.href = "#!/storytime/mybookshelf";
 	    });
 	};

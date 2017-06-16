@@ -1,7 +1,6 @@
 "use strict";
 
-app.controller("NavCtrl", function($scope, $window, SearchTermData){
-    $scope.searchText = SearchTermData;
+app.controller("NavCtrl", function($scope, $window){
     $scope.isLoggedIn = false;
 
     //add a listener for login/logout to show/hide nav items--
