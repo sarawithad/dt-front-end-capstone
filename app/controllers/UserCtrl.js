@@ -1,8 +1,5 @@
 "use strict";
 
-//will need, login, logout, register, login with Google, and AuthFactory for authentication
-
-
 app.controller("UserCtrl", function($scope, $window, AuthFactory, $location){
 
 	//run these when controller loads

@@ -20,7 +20,6 @@ app.controller("OneStoryCtrl", function($scope, $routeParams, StoryFactory, OneS
 
 	//reads user-built story aloud on click of "read my story" button
 	$scope.readSelectedStory = function(){
-	   console.log("you are now using responsive voice");
 	   responsiveVoice.speak($scope.wholeStory, "UK English Female");
 	};
 
@@ -35,11 +34,3 @@ app.controller("OneStoryCtrl", function($scope, $routeParams, StoryFactory, OneS
 	};
 
 });
-
-
-
-	// //function to edit selected saved story
-	// $scope.editOneStory = function(){
-	// 	console.log("hello from inside editOneStory");
-	// 	OneStoryFactory.editStory();
-	// };

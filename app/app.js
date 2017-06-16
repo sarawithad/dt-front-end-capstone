@@ -56,18 +56,10 @@ app.config(function($routeProvider) {
       templateUrl: "partials/mybookshelf.html",
       controller: "MyBookshelfCtrl",
     }).
-    when("/storytime/mybookshelf/:storyId", { //not sure correct
+    when("/storytime/mybookshelf/:storyId", { //
       templateUrl: "partials/one-story.html",
       controller: "OneStoryCtrl"
     }). 
-    when("/storytime/mybookshelf/:storyId/edit", { //not sure correct
-      templateUrl: "partials/edit-story.html",
-      controller: "EditStoryCtrl"
-    }).       
-    // when("storytime/randomstorybuilder/choices", {
-    //   templateUrl: "partials/random-story.html",
-    //   controller: "RandomStoryCtrl"
-    // }).
   otherwise('/');
 });
 

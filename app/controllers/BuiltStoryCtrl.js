@@ -41,15 +41,15 @@ app.controller("StoryCtrl", function($scope, $location, StoryFactory, $window, B
 		.then(function(response){
 			$location.url("storytime/mybookshelf");
 		});
-	};
+	}
 
 	//calls saveStory function on click of "save story"--if want to save story but not logged in, re-directs to login page
 	$scope.putOnBookshelf = function(){ 
-		if (user != null) {
+		if (user !== null) {
 			saveStory($scope.storyComponents);
 		}else{
 			$window.location.href = "#!/storytime/login";
-		};
+		}
 
 	};
 
