@@ -6,8 +6,13 @@ Storytime is an interactive application currently aimed at children which builds
 Clone the repo, install dependencies, runserver and navigate to http://localhost:8080/#!/ using your preferred browser. Commands to run:
 ```
 git clone https://github.com/sarawithad/storytime.git
+
+*open a new terminal window and run below commands:
 cd lib
 npm install
+grunt
+
+*run server in original terminal window by running below command:
 hs
 ```
 
