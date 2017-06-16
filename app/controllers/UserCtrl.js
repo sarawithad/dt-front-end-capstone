@@ -46,7 +46,7 @@ app.controller("UserCtrl", function($scope, $window, AuthFactory, $location){
 	        // $scope.isLoggedIn = true;
 	        // console.log("UserCtrl: user is loggedIn", $scope.isLoggedIn );
 	        // $scope.$apply();
-	        $window.location.href = "#!/storytime/mybookshelf";
+	        $window.location.href = "#!/storytime";
 	    });
 	};
 
@@ -57,7 +57,7 @@ app.controller("UserCtrl", function($scope, $window, AuthFactory, $location){
 	    	var user = result.user.uid;
 	    	console.log("logged in user:", user);
 	    	//Once logged in, go to another view
-	    	$location.path("/storytime/mybookshelf");
+	    	$location.path("/storytime");
 	    	$scope.$apply();
 	  	}).catch(function(error) {
 	    	// Handle the Errors.
